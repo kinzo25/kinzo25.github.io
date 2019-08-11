@@ -5,22 +5,52 @@
 </head>
 <body>
 
+<h2>Stay in touch! Fill out the form below to be a part of the Ciotolina community.</h2>
 <div>
   <form action="/action_page.php">
  
-        <div><label for="name">First Name</label>
+        <div><label for="name">Your full name:</label>
         <input type="text" id="name" name="fullname" placeholder="E.g. Jane Doe"></div>
 
-        <div><label for="state">State</label>
-        <input type="selection" name="statename">
-        <!--Insert selection for state here	--></div>
+        <div><label for="email">Your email address:</label>
+        <input type="email" id="email" name="email" placeholder="E.g. jdoe@example.com"></div>
 
-        <div><label for="city">City</label>
-        <input type="selection" name="cityname">
-        <!--Insert selection for city here	--></div>
+        <div><label for="phone">Your phone number:</label>
+        <input type="tel" id="phone" name="phone" placeholder="(XXX) XXX-XXXX"></div>
 
-        <div><label for="zipcode">Zipcode</label>
-        <input type="text" id="zip" name="zipcode" placeholder="Enter Your Zipcode"></div>
+        <div><label for="state">Select your U.S. state of residence:</label>
+        <!--Insert selection for state here	-->
+		<select name="state" placeholder="Select a state">
+		    <option value="volvo">Volvo</option>
+		    <option value="saab">Saab</option>
+		    <option value="fiat">Fiat</option>
+		    <option value="audi">Audi</option>
+  		</select>
+
+        <div><label for="city">Select your U.S. city of residence:</label>
+        <!--Insert selection for city here	-->
+		<select name="city" placeholder="Select a city">
+		    <option value="volvo">Volvo</option>
+		    <option value="saab">Saab</option>
+		    <option value="fiat">Fiat</option>
+		    <option value="audi">Audi</option>
+  		</select>
+
+        <div><label for="zipcode">Your zipcode:</label>
+        <input type="number" id="zip" name="zipcode" placeholder="XXXXX"></div>
+
+        <div><label for="interest">Please select your interests with Ciotolina (you may select more than one):</label>
+        	<input type="checkbox" id="interest" name="interest1" value="Food"> Food<br>
+			<input type="checkbox" id="interest" name="interest2" value="Wine"> Wine<br>
+			<input type="checkbox" id="interest" name="interest3" value="Special events">Special events<br>
+			<input type="checkbox" id="interest" name="interest4" value="Happy Hour"> Happy Hour<br>
+			<input type="checkbox" id="interest" name="interest5" value="Buffets"> Buffets<br>
+			<input type="checkbox" id="interest" name="interest6" value="Deals"> Deals<br>
+        </div>
+
+        <div><label for="newsletter">The Little Herald is our online monthly newsletter that features our chefs' favourite recipes, recommendations from food critics and some amazing deals! <br> Would you like to subscribe to our newsletter?</label>
+			<input type="radio" id="newsletter" name="newsletter" value="Yes"> Yes<br>
+			<input type="radio" id="newsletter" name="newsletter" value="No"> No<br>
 
     	<div><input type="submit" value="Submit"></div>
 </div>
