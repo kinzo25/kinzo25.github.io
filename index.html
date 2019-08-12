@@ -1,59 +1,108 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
 </head>
 <body>
 
+<div class="navbar" id="topnavbar">
+  <a href="#home">Home</a>
+  <a href="#menu">Menu</a>
+  <a href="#events">Events</a>
+  <a href="#deals">Deals</a>
+  <a href="#community" class="active">Community</a>
+  <a href="#about">About</a>
+  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+    <i class="fa fa-bars"></i>
+  </a>
+</div>
+
+<script>
+function myFunction() {
+  var x = document.getElementById("topnavbar");
+  if (x.className === "navbar") {
+    x.className += " responsive";
+  } else {
+    x.className = "navbar";
+  }
+}
+</script>
+
 <h2>Stay in touch! Fill out the form below to be a part of the Ciotolina community.</h2>
-<div>
+<div class="container">
   <form action="/action_page.php">
  
-        <div><label for="name">Your full name:</label>
-        <input type="text" id="name" name="fullname" placeholder="E.g. Jane Doe"></div>
-
-        <div><label for="email">Your email address:</label>
-        <input type="email" id="email" name="email" placeholder="E.g. jdoe@example.com"></div>
-
-        <div><label for="phone">Your phone number:</label>
-        <input type="tel" id="phone" name="phone" placeholder="(XXX) XXX-XXXX"></div>
-
-        <div><label for="state">Select your U.S. state of residence:</label>
-        <!--Insert selection for state here	-->
-		<select name="state" placeholder="Select a state">
-		    <option value="volvo">Volvo</option>
-		    <option value="saab">Saab</option>
-		    <option value="fiat">Fiat</option>
-		    <option value="audi">Audi</option>
-  		</select>
-
-        <div><label for="city">Select your U.S. city of residence:</label>
-        <!--Insert selection for city here	-->
-		<select name="city" placeholder="Select a city">
-		    <option value="volvo">Volvo</option>
-		    <option value="saab">Saab</option>
-		    <option value="fiat">Fiat</option>
-		    <option value="audi">Audi</option>
-  		</select>
-
-        <div><label for="zipcode">Your zipcode:</label>
-        <input type="number" id="zip" name="zipcode" placeholder="XXXXX"></div>
-
-        <div><label for="interest">Please select your interests with Ciotolina (you may select more than one):</label>
-        	<input type="checkbox" id="interest" name="interest1" value="Food"> Food<br>
-			<input type="checkbox" id="interest" name="interest2" value="Wine"> Wine<br>
-			<input type="checkbox" id="interest" name="interest3" value="Special events"> Special events<br>
-			<input type="checkbox" id="interest" name="interest4" value="Happy Hour"> Happy Hour<br>
-			<input type="checkbox" id="interest" name="interest5" value="Buffets"> Buffets<br>
-			<input type="checkbox" id="interest" name="interest6" value="Deals"> Deals<br>
+        <div class="row">
+            <div class="labelarea"><label for="name">Your full name:</label></div><br>
+            <div class="inputarea"><input type="text" id="name" name="fullname" placeholder="E.g. Jane Doe"></div>
         </div>
 
-        <div><label for="newsletter">The Little Herald is our online monthly newsletter that features our chefs' favourite recipes, recommendations from food critics and some amazing deals! <br> Would you like to subscribe to our newsletter?</label><br>
-			<input type="radio" id="newsletter" name="newsletter" value="Yes"> Yes<br>
-			<input type="radio" id="newsletter" name="newsletter" value="No"> No<br>
+        <div class="row">
+            <div class="labelarea"><label for="email">Your email address:</label></div><br>
+            <div class="inputarea"><input type="email" id="email" name="email" placeholder="E.g. jdoe@example.com"></div>
+        </div>
 
-    	<div><input type="submit" value="Submit"></div>
+        <div class="row">
+            <div class="labelarea"><label for="phone">Your phone number:</label></div><br>
+            <div class="inputarea"><input type="tel" id="phone" name="phone" placeholder="(XXX) XXX-XXXX"></div>
+        </div>
+
+        <div class="row">
+            <div class="labelarea"><label for="state">Select your U.S. state of residence:</label></div><br>
+            <div class="inputarea">
+            <!--Insert selection for state here	-->
+        		<select name="state" placeholder="Select a state">
+        		    <option value="volvo">Volvo</option>
+        		    <option value="saab">Saab</option>
+        		    <option value="fiat">Fiat</option>
+        		    <option value="audi">Audi</option>
+          		</select>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="labelarea"><label for="city">Select your U.S. city of residence:</label></div><br>
+            <div class="inputarea">
+            <!--Insert selection for city here	-->
+        		<select name="city" placeholder="Select a city">
+        		    <option value="volvo">Volvo</option>
+        		    <option value="saab">Saab</option>
+        		    <option value="fiat">Fiat</option>
+        		    <option value="audi">Audi</option>
+          		</select>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="labelarea"><label for="zipcode">Your zipcode:</label></div><br>
+            <div class="inputarea"><input type="number" id="zip" name="zipcode" placeholder="XXXXX"></div>
+        </div>
+
+        <div class="row">
+            <div class="labelarea"><label for="interest">Please select your interests with Ciotolina (you may select more than one):</label></div><br>
+            <div class="inputarea">
+            	<input type="checkbox" id="interest" name="interest1" value="Food"> Food<br>
+    			<input type="checkbox" id="interest" name="interest2" value="Wine"> Wine<br>
+    			<input type="checkbox" id="interest" name="interest3" value="Special events"> Special events<br>
+    			<input type="checkbox" id="interest" name="interest4" value="Happy Hour"> Happy Hour<br>
+    			<input type="checkbox" id="interest" name="interest5" value="Buffets"> Buffets<br>
+    			<input type="checkbox" id="interest" name="interest6" value="Deals"> Deals<br>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="labelarea"><label for="newsletter">The Little Herald is our online monthly newsletter that features our chefs' favourite recipes, recommendations from food critics and some amazing deals! <br> Would you like to subscribe to our newsletter?</label><br></div><br>
+            <div class="inputarea">
+    			<input type="radio" id="newsletter" name="newsletter" value="Yes"> Yes<br>
+    			<input type="radio" id="newsletter" name="newsletter" value="No"> No<br>
+            </div>
+        </div><br>
+
+    	<div class="button"><input type="submit" value="Submit"></div>
 </div>
-  </form>
+</form>
 </body>
 </html>
