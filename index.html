@@ -5,56 +5,78 @@
     <link rel="stylesheet" type="text/css" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Beth+Ellen&display=swap" rel="stylesheet">
+    <script type="text/javascript" src="formvalidation.js"></script>
 </head>
 <body>
 
+<!--------------------THE TOP NAVIGATION BAR--------------------------->
+
 <div class="navbar" id="topnavbar">
-  <a href="#home">Home</a>
-  <a href="#menu">Menu</a>
-  <a href="#events">Events</a>
-  <a href="#deals">Deals</a>
-  <a href="#community" class="active">Community</a>
-  <a href="#about">About</a>
-  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-    <i class="fa fa-bars"></i>
-  </a>
+    <a href="#home">Home</a>
+    <a href="#menu">Menu</a>
+    <a href="#events">Events</a>
+    <a href="#deals">Deals</a>
+    <a href="#community" class="active">Community</a>
+    <a href="#about">About</a>
+    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+        <i class="fa fa-bars"></i>
+    </a>
 </div>
 
+<!--THIS SCRIPT MAKES THE TOP NAV BAR RESPONSIVE-->
+
 <script>
-function myFunction() {
-  var x = document.getElementById("topnavbar");
-  if (x.className === "navbar") {
-    x.className += " responsive";
-  } else {
-    x.className = "navbar";
-  }
+function myFunction() 
+{
+    var x = document.getElementById("topnavbar");
+    if (x.className === "navbar") 
+    {
+        x.className += " responsive";
+    } 
+    else
+    {
+        x.className = "navbar";
+    }
 }
 </script>
 
+
+<!------------------HEADER SECTION OF THE FORM----------------------------->
+
+<br><img src="headerimage.PNG" alt="Ciotolina: Little bowls for big hearts" align="center">
 <h2>Stay in touch! Fill out the form below to be a part of the Ciotolina community.</h2>
+
+<!----------------------EVERYTHING IN THIS CONTAINER IS THE FORM--------------------------->
+<!-------------- EACH FIELD IS INSIDE THE DIV CLASS "ROW". DIV CLASS "LABELAREA" AND "INPUTAREA" ARE TO DISTINGUISH BETWEEN THE TWO SECTIONS, AND THESE CLASSNAMES ARE USED ACCORDINGLY IN STYLING. -------------------------------------------------->
+
 <div class="container">
-  <form action="/action_page.php">
+  <form name="contactform">
  
+<!--NAME-->
         <div class="row">
-            <div class="labelarea"><label for="name">Your full name:</label></div><br>
+            <div class="labelarea"><label for="name">Your full name: *</label></div><br>
             <div class="inputarea"><input type="text" id="name" name="fullname" placeholder="E.g. Jane Doe"></div>
         </div>
 
+<!--EMAIL-->
         <div class="row">
-            <div class="labelarea"><label for="email">Your email address:</label></div><br>
+            <div class="labelarea"><label for="email">Your email address: *</label></div><br>
             <div class="inputarea"><input type="email" id="email" name="email" placeholder="E.g. jdoe@example.com"></div>
         </div>
 
+<!--PHONE NUMBER-->
         <div class="row">
             <div class="labelarea"><label for="phone">Your phone number:</label></div><br>
             <div class="inputarea"><input type="tel" id="phone" name="phone" placeholder="(XXX) XXX-XXXX"></div>
         </div>
 
+<!--STATE-->
         <div class="row">
-            <div class="labelarea"><label for="state">Select your U.S. state of residence:</label></div><br>
+            <div class="labelarea"><label for="state">Select your U.S. state of residence: *</label></div><br>
             <div class="inputarea">
             <!--Insert selection for state here	-->
-        		<select name="state" placeholder="Select a state">
+        		<select id="state" name="state" placeholder="Select a state">
                     <option value="none">Select your State</option>
                     <option value="Alabama">Alabama </option>
                     <option value="Alaska">Alaska </option>
@@ -107,21 +129,23 @@ function myFunction() {
                     <option value="West Virginia">West Virginia </option>
                     <option value="Wisconsin">Wisconsin </option>
                     <option value="Wyoming">Wyoming </option>
-
           		</select>
             </div>
         </div>
 
+<!--CITY-->
         <div class="row">
             <div class="labelarea"><label for="city">Your U.S. city of residence:</label></div><br>
-            <div class="inputarea"><input type="text" id="city" name="cityname" placeholder="Please enter your city"></div>
+            <div class="inputarea"><input type="text" id="city" name="city" placeholder="Please enter your city"></div>
         </div>
 
+<!--ZIPCODE-->
         <div class="row">
             <div class="labelarea"><label for="zipcode">Your zipcode:</label></div><br>
             <div class="inputarea"><input type="number" id="zip" name="zipcode" placeholder="XXXXX"></div>
         </div>
 
+<!--INTERESTS-->
         <div class="row">
             <div class="labelarea"><label for="interest">Please select your interests with Ciotolina (you may select more than one):</label></div><br>
             <div class="inputarea">
@@ -134,15 +158,17 @@ function myFunction() {
             </div>
         </div>
 
+<!--NEWSLETTER-->
         <div class="row">
-            <div class="labelarea"><label for="newsletter">The Little Herald is our online monthly newsletter that features our chefs' favourite recipes, recommendations from food critics and some amazing deals! <br> Would you like to subscribe to our newsletter?</label><br></div><br>
+            <div class="labelarea"><label for="newsletter">The Little Herald is our online monthly newsletter that features our chefs' favourite recipes, recommendations from food critics and some amazing deals! <br> Would you like to subscribe to our newsletter? *</label><br></div><br>
             <div class="inputarea">
     			<input type="radio" id="newsletter" name="newsletter" value="Yes"> Yes<br>
     			<input type="radio" id="newsletter" name="newsletter" value="No"> No<br>
             </div>
         </div><br>
 
-    	<div class="button"><input type="submit" value="Submit"></div>
+<!--SUBMIT BUTTON-->
+    	<div class="button"><input type="submit" value="Submit" onclick="validate()"></div>
 </div>
 </form>
 </body>
