@@ -50,8 +50,10 @@ function myFunction()
 <!----------------------EVERYTHING IN THIS CONTAINER IS THE FORM--------------------------->
 <!-------------- EACH FIELD IS INSIDE THE DIV CLASS "ROW". DIV CLASS "LABELAREA" AND "INPUTAREA" ARE TO DISTINGUISH BETWEEN THE TWO SECTIONS, AND THESE CLASSNAMES ARE USED ACCORDINGLY IN STYLING. -------------------------------------------------->
 
-<div class="container">
-  <form name="contactform">
+<div class="container" id="cont">
+  <form name="contactform" action="https://formspree.io/email@domain.tld" method="POST" />
+
+>
  
 <!--NAME-->
         <div class="row">
@@ -75,9 +77,8 @@ function myFunction()
         <div class="row">
             <div class="labelarea"><label for="state">Select your U.S. state of residence: *</label></div><br>
             <div class="inputarea">
-            <!--Insert selection for state here	-->
-        		<select id="state" name="state" placeholder="Select a state">
-                    <option value="none">Select your State</option>
+        		<select id="state" name="state">
+                    <option value="default">Select your State</option>
                     <option value="Alabama">Alabama </option>
                     <option value="Alaska">Alaska </option>
                     <option value="Arizona">Arizona </option>
@@ -135,8 +136,8 @@ function myFunction()
 
 <!--CITY-->
         <div class="row">
-            <div class="labelarea"><label for="city">Your U.S. city of residence:</label></div><br>
-            <div class="inputarea"><input type="text" id="city" name="city" placeholder="Please enter your city"></div>
+            <div class="labelarea"><label for="city">Your U.S. city of residence: </label></div><br>
+            <div class="inputarea"><input type="text" id="city" name="city" placeholder="Enter your city"></div>
         </div>
 
 <!--ZIPCODE-->
@@ -149,12 +150,12 @@ function myFunction()
         <div class="row">
             <div class="labelarea"><label for="interest">Please select your interests with Ciotolina (you may select more than one):</label></div><br>
             <div class="inputarea">
-            	<input type="checkbox" id="interest" name="interest1" value="Food"> Food<br>
-    			<input type="checkbox" id="interest" name="interest2" value="Wine"> Wine<br>
-    			<input type="checkbox" id="interest" name="interest3" value="Special events"> Special events<br>
-    			<input type="checkbox" id="interest" name="interest4" value="Happy Hour"> Happy Hour<br>
-    			<input type="checkbox" id="interest" name="interest5" value="Buffets"> Buffets<br>
-    			<input type="checkbox" id="interest" name="interest6" value="Deals"> Deals<br>
+            	<input type="checkbox" id="interest" name="interest" value="Food"> Food<br>
+    			<input type="checkbox" id="interest" name="interest" value="Wine"> Wine<br>
+    			<input type="checkbox" id="interest" name="interest" value="Special events"> Special events<br>
+    			<input type="checkbox" id="interest" name="interest" value="Happy Hour"> Happy Hour<br>
+    			<input type="checkbox" id="interest" name="interest" value="Buffets"> Buffets<br>
+    			<input type="checkbox" id="interest" name="interest" value="Deals"> Deals<br>
             </div>
         </div>
 
