@@ -6,7 +6,7 @@
 //City: must only have letters and spaces IF ENTERED
 //Zipcode: length must be five IF ENTERED
 //Interests: not necessary to validate
-//Newsletter: defaults to Yes
+//Newsletter: must select one of the two
 
 function validate()
 {
@@ -32,32 +32,26 @@ function validate()
 		newsletter = "";
 	}
 
-	alert ("The input is " +name+" , "+email+" , "+state+" , "+city+" , "+zip+" , "+newsletter);
+//	alert ("The input is " +name+" , "+email+" , "+state+" , "+city+" , "+zip+" , "+newsletter);
 
 	//Validating the name
 
 	if(name !== "")
 	{
-		//alert("inside first branch name");
 		var letters = /^[a-zA-Z\s]*$/;
 		if(name.match(letters))
 		{
-			//alert("inside second branch name");
 			nameFlag = 1;
 		}
 		else
 		{
-			//alert("inside third branch name");
 			message = message + "\nThe name field must not be empty and should only contain letters and spaces.";
-			//alert(message);
 			nameFlag = 0;
 		}	
 	}
 	else
 	{
-		//alert("inside fourth branch name");
 		message = message + "\nThe name field must not be empty and should only contain letters and spaces.";
-		//alert(message);
 		nameFlag = 0;
 	}
 
@@ -65,14 +59,11 @@ function validate()
 
 	if (email !== "")
 	{
-		//alert("inside first branch email");
 		emailFlag = 1;
 	}
 	else
 	{
-		//alert("inside second branch email");
 		message = message + "\nThe email field must not be empty.";
-		//alert(message);
 		emailFlag = 0;
 	}
 
@@ -80,14 +71,11 @@ function validate()
 
 	if(state !== "default")
 	{
-		//alert("inside first branch state");
 		stateFlag = 1;
 	}
 	else
 	{
-		//alert("inside second branch state");
 		message = message + "\nYou must select a valid state.";
-		//alert(message);
 		stateFlag = 0;
 	}
 
@@ -98,20 +86,16 @@ function validate()
 		var letters = /^[a-zA-Z\s]*$/;
 		if (city.match(letters))
 		{
-			//alert("inside first branch city");
 			cityFlag = 1;
 		}
 		else
 		{
-			//alert("inside second branch city");
 			message = message + "\nThe city name must consist of only letters and spaces.";
-			//alert(message);
 			cityFlag = 0;
 		}
 	}
 	else
 	{
-		//alert("inside third branch city");
 		cityFlag = 1;
 	}
 
@@ -122,20 +106,16 @@ function validate()
 		var numbers = /^\d{5}$/;
 		if(zip.length == 5 && zip.match(numbers))
 		{
-			//alert("inside first branch zip");
 			zipFlag = 1;
 		}
 		else
 		{
-			//alert("inside second branch zip");
 			message = message + "\nThe zipcode must be a five-digit number.";
-			//alert(message);
 			zipFlag = 0;
 		}
 	}
 	else
 	{
-		//alert("inside third branch zip");
 		zipFlag = 1;
 	}
 
@@ -159,34 +139,3 @@ function validate()
 	{
 		alert ("Thank you for your submission. Welcome to the community!");
 	}
-
-//	var errorFlag = nameFlag&&emailFlag&&stateFlag&&cityFlag&&zipFlag&&newsFlag;
-//	alert(errorFlag);
-}
-
-/*	if (errorFlag == 0) //there is some problem, redirect to fill out form again.
-	{
-		location.assign("submitted.html");
-	}
-	else
-	{
-		location.assign("testpage.html");
-	}
-	return message;
-}
-
-
-function changeHTML(x)
-{
-	input = x
-	if (input=1)
-	{
-		alert ("case x = 1");
-    	document.getElementById("test").innerHTML="Please enter all required values.";
-	}
-	else
-	{
-		alert("case x = 0");
-		document.getElementById("test").innerHTML="You're good, go on";
-	}*/
-
