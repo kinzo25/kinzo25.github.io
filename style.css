@@ -24,6 +24,10 @@ img{
 
 /*Start CSS for the form elements*/
 
+p{
+  margin-left: 20px;
+}
+
 h2{
   margin-left: 20px;
   font-size: 25px;
