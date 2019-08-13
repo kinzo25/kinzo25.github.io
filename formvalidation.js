@@ -139,3 +139,4 @@ function validate()
 	{
 		alert ("Thank you for your submission. Welcome to the community!");
 	}
+}
