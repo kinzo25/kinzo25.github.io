@@ -12,7 +12,7 @@ function validate()
 {
 	var name, email, phone, state, city, zip, newsletter;
 	var nameFlag, emailFlag, phoneFlag, stateFlag, cityFlag, zipFlag, newsFlag = 0;
-	var message = "ATTENTION! The following inputs have problems: "
+	var message = "ATTENTION! The following inputs have problems: ";
 
 	name = document.getElementById("name").value;
 	email = document.getElementById("email").value;
@@ -24,7 +24,7 @@ function validate()
 
 	alert ("The input is " +name+" , "+email+" , "+phone+" , "+state+" , "+city+" , "+zip+" , "+newsletter);
 
-/*	//Validating the name
+	//Validating the name
 
 	if(name !== null)
 	{
@@ -36,11 +36,15 @@ function validate()
 		else
 		{
 			message = message + "\nThe name field must not be empty and should only contain letters and spaces.";
+			alert(message);
+			nameFlag = 0;
 		}	
 	}
 	else
 	{
 		message = message + "\nThe name field must not be empty and should only contain letters and spaces.";
+		alert(message);
+		nameFlag = 0;
 	}
 
 	//Validating the email
@@ -51,7 +55,9 @@ function validate()
 	}
 	else
 	{
-		message = message + "\nThe email field must not be empty."
+		message = message + "\nThe email field must not be empty.";
+		alert(message);
+		emailFlag = 0;
 	}
 
 	//Validating the state
@@ -62,7 +68,9 @@ function validate()
 	}
 	else
 	{
-		message = message + "\nYou must select a valid state."
+		message = message + "\nYou must select a valid state.";
+		alert(message);
+		stateFlag = 0;
 	}
 
 	//Validating the city
@@ -75,7 +83,9 @@ function validate()
 		}
 		else
 		{
-			message = message + "\nThe city name must consist of only letters and spaces."
+			message = message + "\nThe city name must consist of only letters and spaces.";
+			alert(message);
+			cityFlag = 0;
 		}
 	}
 	else
@@ -93,7 +103,9 @@ function validate()
 		}
 		else
 		{
-			message = message + "\nThe zipcode must be a five-digit number."
+			message = message + "\nThe zipcode must be a five-digit number.";
+			alert(message);
+			zipFlag = 0;
 		}
 	}
 	else
@@ -107,9 +119,10 @@ function validate()
 	}
 	else
 	{
-		message = message + "\nYou must select whether or not you wish to receive the newsletter."
+		message = message + "\nYou must select whether or not you wish to receive the newsletter.";
+		newsFlag = 1;
 	}
-
+	
 	return message;
 }
 
@@ -126,6 +139,6 @@ function changeHTML(x)
 	{
 		alert("case x = 0");
 		document.getElementById("test").innerHTML="You're good, go on";
-	}*/
+	}
 }
 
