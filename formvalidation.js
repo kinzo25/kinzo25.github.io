@@ -6,7 +6,7 @@
 //City: must only have letters and spaces IF ENTERED
 //Zipcode: length must be five IF ENTERED
 //Interests: not necessary to validate
-//Newsletter: one of them must be selected
+//Newsletter: defaults to Yes
 
 function validate()
 {
@@ -19,7 +19,18 @@ function validate()
 	state = document.getElementById("state").value;
 	city = document.getElementById("city").value;
 	zip = document.getElementById("zip").value;
-	newsletter = document.getElementById("newsletter").value;
+	if(document.getElementById("newsletterY").checked)
+	{
+		newsletter = "Yes";
+	}
+	else if (document.getElementById("newsletterN").checked)
+	{
+		newsletter = "No";
+	}
+	else
+	{
+		newsletter = "";
+	}
 
 	alert ("The input is " +name+" , "+email+" , "+state+" , "+city+" , "+zip+" , "+newsletter);
 
@@ -27,26 +38,26 @@ function validate()
 
 	if(name !== "")
 	{
-		alert("inside first branch name");
+		//alert("inside first branch name");
 		var letters = /^[a-zA-Z\s]*$/;
 		if(name.match(letters))
 		{
-			alert("inside second branch name");
+			//alert("inside second branch name");
 			nameFlag = 1;
 		}
 		else
 		{
-			alert("inside third branch name");
+			//alert("inside third branch name");
 			message = message + "\nThe name field must not be empty and should only contain letters and spaces.";
-			alert(message);
+			//alert(message);
 			nameFlag = 0;
 		}	
 	}
 	else
 	{
-		alert("inside fourth branch name");
+		//alert("inside fourth branch name");
 		message = message + "\nThe name field must not be empty and should only contain letters and spaces.";
-		alert(message);
+		//alert(message);
 		nameFlag = 0;
 	}
 
@@ -54,14 +65,14 @@ function validate()
 
 	if (email !== "")
 	{
-		alert("inside first branch email");
+		//alert("inside first branch email");
 		emailFlag = 1;
 	}
 	else
 	{
-		alert("inside second branch email");
+		//alert("inside second branch email");
 		message = message + "\nThe email field must not be empty.";
-		alert(message);
+		//alert(message);
 		emailFlag = 0;
 	}
 
@@ -69,14 +80,14 @@ function validate()
 
 	if(state !== "default")
 	{
-		alert("inside first branch state");
+		//alert("inside first branch state");
 		stateFlag = 1;
 	}
 	else
 	{
-		alert("inside second branch state");
+		//alert("inside second branch state");
 		message = message + "\nYou must select a valid state.";
-		alert(message);
+		//alert(message);
 		stateFlag = 0;
 	}
 
@@ -87,20 +98,20 @@ function validate()
 		var letters = /^[a-zA-Z\s]*$/;
 		if (city.match(letters))
 		{
-			alert("inside first branch city");
+			//alert("inside first branch city");
 			cityFlag = 1;
 		}
 		else
 		{
-			alert("inside second branch city");
+			//alert("inside second branch city");
 			message = message + "\nThe city name must consist of only letters and spaces.";
-			alert(message);
+			//alert(message);
 			cityFlag = 0;
 		}
 	}
 	else
 	{
-		alert("inside third branch city");
+		//alert("inside third branch city");
 		cityFlag = 1;
 	}
 
@@ -111,46 +122,55 @@ function validate()
 		var numbers = /^\d{5}$/;
 		if(zip.length == 5 && zip.match(numbers))
 		{
-			alert("inside first branch zip");
+			//alert("inside first branch zip");
 			zipFlag = 1;
 		}
 		else
 		{
-			alert("inside second branch zip");
+			//alert("inside second branch zip");
 			message = message + "\nThe zipcode must be a five-digit number.";
-			alert(message);
+			//alert(message);
 			zipFlag = 0;
 		}
 	}
 	else
 	{
-		alert("inside third branch zip");
+		//alert("inside third branch zip");
 		zipFlag = 1;
 	}
 
-	//Validating newsletter
-/*
-	if(newsletter !== null)
-	{
-		newsFlag = 1;
-	}
-	else
-	{
-		message = message + "\nYou must select whether or not you wish to receive the newsletter.";
-		newsFlag = 1;
-	}
-*/
-	alert(message);
-/*
+	//Validating the Newsletter radio button
 
-	var errorFlag = nameFlag&&emailFlag&&stateFlag&&cityFlag&&zipFlag&&newsFlag;
-	if (errorFlag == 0)
+	if(newsletter !== "")
 	{
-		window.location.assign("https://www.w3schools.com");
+		newsFlag = 1;
 	}
 	else
 	{
-		window.location.assign("https://www.google.com");
+		message = message + "\nYou must select whether or not you wish to subscribe to the newsletter.";
+		newsFlag = 0;
+	}
+
+	if(message !== "ATTENTION! The following inputs have problems: ")
+	{
+		alert(message);
+	}
+	else
+	{
+		alert ("Thank you for your submission. Welcome to the community!");
+	}
+
+//	var errorFlag = nameFlag&&emailFlag&&stateFlag&&cityFlag&&zipFlag&&newsFlag;
+//	alert(errorFlag);
+}
+
+/*	if (errorFlag == 0) //there is some problem, redirect to fill out form again.
+	{
+		location.assign("submitted.html");
+	}
+	else
+	{
+		location.assign("testpage.html");
 	}
 	return message;
 }
@@ -169,5 +189,4 @@ function changeHTML(x)
 		alert("case x = 0");
 		document.getElementById("test").innerHTML="You're good, go on";
 	}*/
-}
 

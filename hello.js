@@ -1,6 +1,4 @@
-
-function chat()
+function redirect()
 {
-    alert ("started!");
-    document.getElementById("test").innerHTML="foo";
+	window.location.replace("www.google.com");
 }

@@ -1,11 +1,51 @@
+<!DOCTYPE html>
 <html>
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Beth+Ellen&display=swap" rel="stylesheet">
+    <script type="text/javascript" src="formvalidation.js"></script>
 </head>
-<script type="text/javascript" src="formvalidation.js"></script>
+<body>
 
-<body id="body" onload="">
-	<p id="test">
-		test..
-	</p>
+<!--------------------THE TOP NAVIGATION BAR--------------------------->
+
+<div class="navbar" id="topnavbar">
+    <a href="#home">Home</a>
+    <a href="#menu">Menu</a>
+    <a href="#events">Events</a>
+    <a href="#deals">Deals</a>
+    <a href="#community" class="active">Community</a>
+    <a href="#about">About</a>
+    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+        <i class="fa fa-bars"></i>
+    </a>
+</div>
+
+<!--THIS SCRIPT MAKES THE TOP NAV BAR RESPONSIVE-->
+
+<script>
+function myFunction() 
+{
+    var x = document.getElementById("topnavbar");
+    if (x.className === "navbar") 
+    {
+        x.className += " responsive";
+    } 
+    else
+    {
+        x.className = "navbar";
+    }
+}
+</script>
+
+
+<!------------------HEADER SECTION OF THE FORM----------------------------->
+
+<br><img src="headerimage.PNG" alt="Ciotolina: Little bowls for big hearts" align="center">
+<h2>Stay in touch! Fill out the form below to be a part of the Ciotolina community.</h2>
+
 </body>
 </html>
